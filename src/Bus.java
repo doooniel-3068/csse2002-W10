@@ -1,17 +1,17 @@
-public class Bus {
-    private Object[] passengers;
+public class Bus<T extends Passenger> {
+    private T[] passengers;
     private int currentCount;
     private int capacity;
 
     public Bus(int capacity) {
-        this.passengers = new Object[capacity];
+        this.passengers = (T[]) new Object[capacity];
         this.capacity = capacity;
         this.currentCount = 0;
     }
 
     public void passengerOn(Object passenger) {
         if (currentCount < capacity) {
-            passengers[currentCount++] = passenger;
+            passengers[currentCount++] = (T) passenger;
         }
     }
 

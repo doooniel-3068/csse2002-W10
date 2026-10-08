@@ -9,14 +9,14 @@ public class Bus<T extends Passenger> {
         this.currentCount = 0;
     }
 
-    public void passengerOn(Object passenger) {
+    public void passengerOn(T passenger) {
         if (currentCount < capacity) {
-            passengers[currentCount++] = (T) passenger;
+            passengers[currentCount++] = passenger;
         }
     }
 
-    public Object passengerOff() {
-        Object exitingPassenger = null;
+    public T passengerOff() {
+        T exitingPassenger = null;
         if (currentCount > 0) {
             exitingPassenger = passengers[--currentCount];
         }

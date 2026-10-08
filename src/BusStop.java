@@ -6,9 +6,9 @@ public class BusStop {
 
     public static Bus<TransportWorker> trainingBus(BusDriver trainee, List<? extends TransportWorker> trainers){
         Bus<TransportWorker> bus = new Bus<>(10);
-        trainers.forEach(t -> {
-            bus.passengerOn(t);
-        });
+        trainers.forEach(bus::passengerOn);
         return bus;
     }
+
+
 }
